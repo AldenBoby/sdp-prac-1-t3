@@ -1,18 +1,55 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
+namespace Euler
+{
 
-public class Euler(){
-    isPrime(10);
-}
+   //Problem 7
+    class Program
+    {
    
- private bool isPrime(int num){
-               if(counter < 2){
-            return true;
-        }else{
-            return false;
+        static void Main(string[] args)
+        {
+            Console.WriteLine(""+PrimeNumber());
         }
- }
 
- private void printPrimes(){
-     
- }
+         static string PrimeNumber()  
+        {
+            List<int> primes = new List<int>();
+            string output = "";
+            int num = 2, count = 0;
+            
+            while(count<10002){
+                if(isPrime(num)){
+                    primes.Add(num);
+                    count++;
+                } 
+                num++;
+            } 
+           // Console.WriteLine(count);
+          
+
+           //Printing
+         
+          int length = primes.Count-1;
+               output = ""+primes[length];
+              
+
+           
+           return output;
+
+           
+        }
+
+
+        static bool isPrime(int num)
+        {
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0) return false;
+            }
+            return true; 
+        }
+    }
+}
