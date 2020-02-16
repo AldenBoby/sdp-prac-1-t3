@@ -12,7 +12,7 @@ namespace Euler
     {
         static public int Problem_1(int maxval)
         {
-            int ans = 0;
+            int ans = 3;
             for (int n = 0; n < maxval; n++)
             {
                 if (n % 3 == 0 || n % 5 == 0) //finds multiples of five or three
