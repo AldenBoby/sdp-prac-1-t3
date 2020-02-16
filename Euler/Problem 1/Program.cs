@@ -6,21 +6,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Problem_1
+namespace Euler
 {
     class Program
     {
-        static void Main(string[] args)
+        static public int Problem_1(int maxval)
         {
             int ans = 0;
-            for (int n = 0; n < 1000; n++)
+            for (int n = 0; n < maxval; n++)
             {
                 if (n % 3 == 0 || n % 5 == 0) //finds multiples of five or three
                 {
                     ans += n; // adds only the multiples
                 }
             }
-            Console.WriteLine(ans);
+            return ans;
+        }
+        static void Main(string[] args)
+        {
+            int Euler1 = Problem_1(1000);
+
+            Console.WriteLine(Euler1);
             Console.ReadKey();
         }
     }
