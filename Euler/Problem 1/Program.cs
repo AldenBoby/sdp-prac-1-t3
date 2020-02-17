@@ -22,11 +22,42 @@ namespace Euler
             }
             return ans;
         }
+        static string PrimeNumber()
+        {
+            List<int> primes = new List<int>();
+            string output = "";
+            int num = 2, count = 0;
+
+            while (count < 10002)
+            {
+                if (isPrime(num))
+                {
+                    primes.Add(num);
+                    count++;
+                }
+                num++;
+            }
+            // Console.WriteLine(count);
+            //Printing
+            int length = primes.Count - 1;
+            output = "" + primes[length];
+            return output;
+        }
+
+        static bool isPrime(int num)
+        {
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0) return false;
+            }
+            return true;
+        }
         static void Main(string[] args)
         {
             int Euler1 = Problem_1(1000);
 
-            Console.WriteLine(Euler1);
+            Console.WriteLine("Problem 1: "+Euler1);
+            Console.WriteLine("Problem 7: " + PrimeNumber());
             Console.ReadKey();
         }
     }
