@@ -44,6 +44,17 @@ namespace Euler
             return output;
         }
 
+        static string evenFibonacciSum(int maxValue=4000000)
+        {
+            if(maxValue>4000000) return "Cannot exceed a max value of 4 000 000"
+            int sum = 0;
+            for (int i = 1; i <=maxValue; i++)
+            {
+                sum = i % 2 == 0 ? sum + i : sum;
+            }
+            return "Sum of even valued terms in fibbonaci sequence "+sum;
+        }
+
         static bool isPrime(int num)
         {
             for (int i = 2; i < num; i++)
@@ -58,6 +69,7 @@ namespace Euler
 
             Console.WriteLine("Problem 1: "+Euler1);
             Console.WriteLine("Problem 7: " + PrimeNumber());
+            Console.WriteLine("Problem 2: " + evenFibonacciSum());
             Console.ReadKey();
         }
     }
